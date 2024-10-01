@@ -5,7 +5,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <NavLink>
+      <NavLink to={'/'}>
         <img src="" alt="" />
         <h2>React PC</h2>
       </NavLink>
