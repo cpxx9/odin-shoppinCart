@@ -1,12 +1,16 @@
-import { describe, it, expect } from 'vitest';
+import { vi, describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import { Nav } from '../components/Nav';
+import Nav from '../components/Nav';
 
-// jest.mock('react-router-dom', () => ({ children }) => <a>{children}</a>);
+vi.mock('react-router-dom', () => ({
+  NavLink: ({ children }) => <a>{children}</a>,
+}));
 describe('Navbar component', () => {
   it('renders the proper title', () => {
     render(<Nav />);
-    expect(screen.getByRole('span').textContent).toMatch(/react pc/i);
+    expect(
+      screen.getByRole('heading', { name: /react pc/i }),
+    ).toBeInTheDocument();
   });
 });
