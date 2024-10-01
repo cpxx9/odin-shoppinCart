@@ -1,5 +1,11 @@
+import Hero from '../components/Hero';
+
 const Root = () => {
-  return <div>Root</div>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 export default Root;
