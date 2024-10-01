@@ -5,26 +5,16 @@ const Nav = () => {
 
   return (
     <nav>
-      <div>
-        <div>
-          <div>
-            <NavLink>
-              <img src="" alt="" />
-              <span>React PC&apos;s</span>
-            </NavLink>
-            <div>
-              <div>
-                <NavLink to={'/'} className={linkClass}>
-                  Home
-                </NavLink>
-                <NavLink to={'/store'} className={linkClass}>
-                  Store
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <NavLink>
+        <img src="" alt="" />
+        <span>React PC&apos;s</span>
+      </NavLink>
+      <NavLink to={'/'} className={linkClass}>
+        Home
+      </NavLink>
+      <NavLink to={'/store'} className={linkClass}>
+        Store
+      </NavLink>
     </nav>
   );
 };
