@@ -7,7 +7,7 @@ const HomeCards = () => {
       <Card>
         <h2>Store</h2>
         <p>
-          Browse our collection of PC&apos;s and start being more productive
+          Browse our collection of fake products and start your shopping spree
           today
         </p>
         <Link to={'/store'}>Browse PC&apos;s</Link>

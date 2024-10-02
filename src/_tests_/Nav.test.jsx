@@ -10,7 +10,7 @@ describe('Navbar component', () => {
   it('renders the proper title', () => {
     render(<Nav />);
     expect(
-      screen.getByRole('heading', { name: /react pc/i }),
+      screen.getByRole('heading', { name: /odin storefront/i }),
     ).toBeInTheDocument();
   });
 });

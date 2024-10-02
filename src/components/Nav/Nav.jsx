@@ -7,7 +7,7 @@ const Nav = () => {
     <nav>
       <NavLink to={'/'}>
         <img src="" alt="" />
-        <h2>React PC</h2>
+        <h2>Odin Storefront</h2>
       </NavLink>
       <NavLink to={'/'} className={linkClass}>
         Home
