@@ -44,9 +44,9 @@ describe('Item Component', () => {
     const category = screen.getByRole('heading', { name: item.category });
     const description = screen.getByText(shortDescription);
     const rating = screen.getByRole('heading', {
-      name: item.rating.rate + ' / ' + item.rating.count,
+      name: item.rating.rate + ' stars with ' + item.rating.count + ' reviews',
     });
-    const price = screen.getByRole('heading', { name: item.price });
+    const price = screen.getByRole('heading', { name: '$' + item.price });
     expect(title).toBeInTheDocument();
     expect(category).toBeInTheDocument();
     expect(description).toBeInTheDocument();
@@ -82,9 +82,10 @@ describe('Item Component', () => {
     const category = screen.getByRole('heading', { name: item1.category });
     const description = screen.getByText(shortDescription);
     const rating = screen.getByRole('heading', {
-      name: item1.rating.rate + ' / ' + item1.rating.count,
+      name:
+        item1.rating.rate + ' stars with ' + item1.rating.count + ' reviews',
     });
-    const price = screen.getByRole('heading', { name: item1.price });
+    const price = screen.getByRole('heading', { name: '$' + item1.price });
     expect(title).toBeInTheDocument();
     expect(category).toBeInTheDocument();
     expect(description).toBeInTheDocument();
