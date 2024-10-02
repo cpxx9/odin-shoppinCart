@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Listing = ({ item }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -36,6 +37,10 @@ const Listing = ({ item }) => {
       </div>
     </div>
   );
+};
+
+Listing.propTypes = {
+  item: PropTypes.object,
 };
 
 export default Listing;

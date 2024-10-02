@@ -14,7 +14,6 @@ const Listings = ({ isHome = false }) => {
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        console.log(data);
         setItems(data);
       } catch (error) {
         console.log('Error fetching data', error);
@@ -24,6 +23,24 @@ const Listings = ({ isHome = false }) => {
     };
     fetchItems();
   }, []);
+
+  return (
+    <section>
+      <div>
+        <h2>{isHome ? 'Recent listings' : 'Browse Listings'}</h2>
+        {loading ? (
+          // <RingLoader loading={loading} />
+          <div>test</div>
+        ) : (
+          <div>
+            {items.map((item) => (
+              <Listing key={item.id} item={item} />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
 };
 
 Listings.propTypes = {
