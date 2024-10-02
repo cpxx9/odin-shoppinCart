@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Hero from '../components/Hero';
+import Hero from '../components//Hero/Hero';
 
 describe('Hero Component', () => {
   it('renders with default values if no props passed', () => {
