@@ -3,7 +3,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Quantity from '../Quantity/Quantity';
 
-const Listing = ({ item }) => {
+const Listing = ({ item, items, itemIndex, setItem }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   let description = item.description;
@@ -29,7 +29,7 @@ const Listing = ({ item }) => {
           {item.rating.rate} stars with {item.rating.count} reviews
         </h3>
 
-        <Quantity quantity={item.quantity} />
+        <Quantity setItems={setItem} items={items} itemIndex={itemIndex} />
         <h4>${item.price}</h4>
 
         <Link to={`/item/${item.id}`}>Item page</Link>

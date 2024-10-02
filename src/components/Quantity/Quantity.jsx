@@ -1,30 +1,36 @@
 import { useState } from 'react';
 
-const Quantity = ({ quantity = 0 }) => {
-  const [itemQuantity, setItemQuantity] = useState(quantity);
-
+const Quantity = ({ setItems, items, itemIndex }) => {
   const decreaseQuantity = () => {
-    if (itemQuantity < 1) {
+    if (items[itemIndex].quantity < 1) {
       return;
     }
-    const newQuantity = itemQuantity - 1;
-    setItemQuantity(newQuantity);
+
+    const newItems = [...items];
+    newItems[itemIndex].quantity = newItems[itemIndex].quantity - 1;
+
+    setItems(newItems);
   };
 
   const increaseQuantity = () => {
-    const newQuantity = itemQuantity + 1;
-    setItemQuantity(newQuantity);
+    const newItems = [...items];
+    newItems[itemIndex].quantity = newItems[itemIndex].quantity + 1;
+
+    setItems(newItems);
   };
 
   const clearQuantity = () => {
-    setItemQuantity(0);
+    const newItems = [...items];
+    newItems[itemIndex].quantity = 0;
+
+    setItems(newItems);
   };
 
   return (
     <div>
       <div>
         <button onClick={decreaseQuantity}>-</button>
-        <p>{itemQuantity}</p>
+        <p>{items[itemIndex].quantity}</p>
         <button onClick={increaseQuantity}>+</button>
       </div>
       <button onClick={clearQuantity}>Clear</button>

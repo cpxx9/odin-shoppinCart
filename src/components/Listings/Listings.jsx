@@ -38,7 +38,13 @@ const Listings = ({ isHome = false }) => {
         ) : (
           <div>
             {items.map((item) => (
-              <Listing key={item.id} item={item} />
+              <Listing
+                key={item.id}
+                item={item}
+                items={items}
+                itemIndex={items.indexOf(item)}
+                setItem={setItems}
+              />
             ))}
           </div>
         )}
