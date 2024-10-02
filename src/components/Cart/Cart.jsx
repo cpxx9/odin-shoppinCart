@@ -1,11 +1,17 @@
 import { useState } from 'react';
 
-const Cart = ({ items = [], isOpen = false }) => {
+const Cart = ({ items = [] }) => {
   const [cartItems, setCartItems] = useState(items);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openCart = () => {
+    const open = !isOpen;
+    setIsOpen(open);
+  };
 
   return (
     <div>
-      <span>Cart</span>
+      <span onClick={openCart}>Cart</span>
       {isOpen ? (
         <ul>
           {cartItems.map((cartItem) => {
