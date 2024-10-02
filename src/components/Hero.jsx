@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 
-const Hero = ({ title, subtitle }) => {
+const Hero = ({
+  title = 'Your cool website title',
+  subtitle = 'Your cool website tagline, make it unique',
+}) => {
   return (
     <section>
       <h1>{title}</h1>
@@ -14,8 +17,4 @@ Hero.propTypes = {
   subtitle: PropTypes.string,
 };
 
-Hero.defaultProps = {
-  title: 'Your cool website title',
-  subtitle: 'Your cool website tagline, make it unique',
-};
 export default Hero;
