@@ -31,7 +31,7 @@ const Listing = ({ item }) => {
         <div></div>
 
         <div>
-          <h4>{item.price}</h4>
+          <h4>${item.price}</h4>
           <Link to={`/item/${item.id}`}>Item page</Link>
         </div>
       </div>
