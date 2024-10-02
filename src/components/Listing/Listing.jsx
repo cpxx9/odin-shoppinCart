@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import Quantity from '../Quantity/Quantity';
 
 const Listing = ({ item }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -28,12 +29,10 @@ const Listing = ({ item }) => {
           {item.rating.rate} stars with {item.rating.count} reviews
         </h3>
 
-        <div></div>
+        <Quantity quantity={item.quantity} />
+        <h4>${item.price}</h4>
 
-        <div>
-          <h4>${item.price}</h4>
-          <Link to={`/item/${item.id}`}>Item page</Link>
-        </div>
+        <Link to={`/item/${item.id}`}>Item page</Link>
       </div>
     </div>
   );

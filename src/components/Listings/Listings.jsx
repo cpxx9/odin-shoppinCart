@@ -14,7 +14,11 @@ const Listings = ({ isHome = false }) => {
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        setItems(data);
+        const newData = data.map((obj) => {
+          obj.quantity = 0;
+          return obj;
+        });
+        setItems(newData);
       } catch (error) {
         console.log('Error fetching data', error);
       } finally {
