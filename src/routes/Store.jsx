@@ -1,5 +1,7 @@
+import Listings from '../components/Listings/Listings';
+
 const Store = () => {
-  return <div>Store</div>;
+  return <Listings />;
 };
 
 export default Store;

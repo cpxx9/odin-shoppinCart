@@ -25,7 +25,7 @@ const Listing = ({ item }) => {
         </button>
 
         <h3>
-          {item.rating.rate} / {item.rating.count}
+          {item.rating.rate} stars with {item.rating.count} reviews
         </h3>
 
         <div></div>
