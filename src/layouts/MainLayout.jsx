@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Nav from '../components/Nav/Nav';
 
 const MainLayout = () => {
+  const [cart, setCart] = useState([]);
+
   return (
     <>
-      <Nav />
-      <Outlet />
+      <Nav cart={cart} setCart={setCart} />
+      <Outlet context={[cart, setCart]} />
     </>
   );
 };

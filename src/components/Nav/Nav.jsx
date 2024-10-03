@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Cart from '../Cart/Cart';
 import { NavLink } from 'react-router-dom';
 
-const Nav = ({ items = [] }) => {
+const Nav = ({ cart = [], setCart = () => {} }) => {
   const linkClass = ({ isActive }) => (isActive ? 'active-link' : '');
 
   return (
@@ -18,7 +18,7 @@ const Nav = ({ items = [] }) => {
       <NavLink to={'/store'} className={linkClass}>
         Store
       </NavLink>
-      <Cart items={items} />
+      <Cart cart={cart} setCart={setCart} />
     </nav>
   );
 };

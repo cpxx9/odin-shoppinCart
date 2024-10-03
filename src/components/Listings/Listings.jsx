@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { RingLoader } from 'react-spinners';
 
-const Listings = ({ isHome = false }) => {
+const Listings = ({ isHome = false, cart = [], setCart = () => {} }) => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,11 +14,7 @@ const Listings = ({ isHome = false }) => {
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        const newData = data.map((obj) => {
-          obj.quantity = 0;
-          return obj;
-        });
-        setItems(newData);
+        setItems(data);
       } catch (error) {
         console.log('Error fetching data', error);
       } finally {

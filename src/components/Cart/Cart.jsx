@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const Cart = ({ items = [] }) => {
-  const [cartItems, setCartItems] = useState(items);
+const Cart = ({ cart = [], setCart = () => {} }) => {
+  const [cartItems, setCartItems] = useState(cart);
   const [isOpen, setIsOpen] = useState(false);
 
   const openCart = () => {

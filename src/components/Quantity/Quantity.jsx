@@ -1,39 +1,19 @@
 import { useState } from 'react';
 
-const Quantity = ({ setItems, items, itemIndex }) => {
-  const decreaseQuantity = () => {
-    if (items[itemIndex].quantity < 1) {
-      return;
-    }
+const Quantity = ({ item, cart, setCart }) => {
+  const increaseQuantity = () => {};
 
-    const newItems = [...items];
-    newItems[itemIndex].quantity = newItems[itemIndex].quantity - 1;
-
-    setItems(newItems);
+  const isInCart = (cartItem) => {
+    return cartItem.id === item.id;
   };
-
-  const increaseQuantity = () => {
-    const newItems = [...items];
-    newItems[itemIndex].quantity = newItems[itemIndex].quantity + 1;
-
-    setItems(newItems);
-  };
-
-  const clearQuantity = () => {
-    const newItems = [...items];
-    newItems[itemIndex].quantity = 0;
-
-    setItems(newItems);
-  };
-
   return (
     <div>
       <div>
-        <button onClick={decreaseQuantity}>-</button>
-        <p>{items[itemIndex].quantity}</p>
-        <button onClick={increaseQuantity}>+</button>
+        <button onClick={() => {}}>-</button>
+        <p>{0}</p>
+        <button onClick={() => {}}>+</button>
       </div>
-      <button onClick={clearQuantity}>Clear</button>
+      <button onClick={() => {}}>Clear</button>
     </div>
   );
 };
