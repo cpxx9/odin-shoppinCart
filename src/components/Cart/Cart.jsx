@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Quantity from '../Quantity/Quantity';
+import StyledCart from './StyledCart';
 
 const Cart = ({ cart = [], setCart = () => {} }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +11,8 @@ const Cart = ({ cart = [], setCart = () => {} }) => {
   };
 
   return (
-    <div>
-      <span onClick={toggleCart}>Cart</span>
+    <StyledCart onClick={toggleCart}>
+      <span>Cart</span>
       {isOpen ? (
         <ul>
           {cart.map((cartItem) => (
@@ -25,7 +26,7 @@ const Cart = ({ cart = [], setCart = () => {} }) => {
       ) : (
         ''
       )}
-    </div>
+    </StyledCart>
   );
 };
 

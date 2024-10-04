@@ -13,14 +13,14 @@ const Nav = ({ cart = [], setCart = () => {} }) => {
         <img src="" alt="" />
         <h2>Odin Storefront</h2>
       </NavLink>
-      <div>
+      <div className={`link-wrapper`}>
         <NavLink to={'/'} className={linkClass}>
           Home
         </NavLink>
         <NavLink to={'/store'} className={linkClass}>
           Store
         </NavLink>
-        <Cart cart={cart} setCart={setCart} />
+        <Cart className={`cart`} cart={cart} setCart={setCart} />
       </div>
     </StyledNav>
   );
