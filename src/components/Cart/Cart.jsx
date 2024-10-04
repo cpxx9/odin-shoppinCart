@@ -10,9 +10,13 @@ const Cart = ({ cart = [], setCart = () => {} }) => {
     setIsOpen(open);
   };
 
+  document.addEventListener('click', (e) => {
+    console.log(e.target);
+  });
+
   return (
-    <StyledCart onClick={toggleCart}>
-      <span>Cart</span>
+    <StyledCart>
+      <span onClick={toggleCart}>Cart</span>
       {isOpen ? (
         <ul>
           {cart.map((cartItem) => (
