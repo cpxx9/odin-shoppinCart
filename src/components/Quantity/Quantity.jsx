@@ -28,24 +28,21 @@ const Quantity = ({ item, cart, setCart }) => {
     }
   };
 
-  const clearCart = () => {
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    setCart(newCart);
-  };
+  // const clearCart = () => {
+  //   const newCart = [...cart];
+  //   newCart.splice(index, 1);
+  //   setCart(newCart);
+  // };
 
   return (
     <StyledQuantity>
-      <div className={`main`}>
-        <button className={`minus`} onClick={decreaseQuantity}>
-          -
-        </button>
-        <p>{index > -1 ? cart[index].quantity : '0'}</p>
-        <button className={`plus`} onClick={increaseQuantity}>
-          +
-        </button>
-      </div>
-      <button onClick={clearCart}>Clear</button>
+      <button className={`minus`} onClick={decreaseQuantity}>
+        -
+      </button>
+      <p>{index > -1 ? cart[index].quantity : '0'}</p>
+      <button className={`plus`} onClick={increaseQuantity}>
+        +
+      </button>
     </StyledQuantity>
   );
 };
