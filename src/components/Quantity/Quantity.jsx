@@ -6,8 +6,6 @@ const Quantity = ({ item, cart, setCart }) => {
   const increaseQuantity = () => {
     if (index > -1) {
       const newCart = [...cart];
-      console.log(index);
-      console.log(newCart[index]);
       newCart[index].quantity += 1;
       setCart(newCart);
     } else {
@@ -17,14 +15,31 @@ const Quantity = ({ item, cart, setCart }) => {
     }
   };
 
+  const decreaseQuantity = () => {
+    if (index > -1) {
+      const newCart = [...cart];
+      newCart[index].quantity -= 1;
+      if (newCart[index].quantity === 0) newCart.splice(index, 1);
+      setCart(newCart);
+    } else {
+      return;
+    }
+  };
+
+  const clearCart = () => {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    setCart(newCart);
+  };
+
   return (
     <div>
       <div>
-        <button onClick={() => {}}>-</button>
+        <button onClick={decreaseQuantity}>-</button>
         <p>{index > -1 ? cart[index].quantity : '0'}</p>
         <button onClick={increaseQuantity}>+</button>
       </div>
-      <button onClick={() => {}}>Clear</button>
+      <button onClick={clearCart}>Clear</button>
     </div>
   );
 };
