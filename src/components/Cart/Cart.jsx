@@ -4,8 +4,6 @@ import Quantity from '../Quantity/Quantity';
 const Cart = ({ cart = [], setCart = () => {} }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(cart);
-
   const toggleCart = () => {
     const open = !isOpen;
     setIsOpen(open);
