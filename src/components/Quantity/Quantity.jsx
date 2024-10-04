@@ -36,10 +36,14 @@ const Quantity = ({ item, cart, setCart }) => {
 
   return (
     <StyledQuantity>
-      <div>
-        <button onClick={decreaseQuantity}>-</button>
+      <div className={`main`}>
+        <button className={`minus`} onClick={decreaseQuantity}>
+          -
+        </button>
         <p>{index > -1 ? cart[index].quantity : '0'}</p>
-        <button onClick={increaseQuantity}>+</button>
+        <button className={`plus`} onClick={increaseQuantity}>
+          +
+        </button>
       </div>
       <button onClick={clearCart}>Clear</button>
     </StyledQuantity>
