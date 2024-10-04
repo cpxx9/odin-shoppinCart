@@ -37,9 +37,8 @@ const Listings = ({ isHome = false, cart = [], setCart = () => {} }) => {
               <Listing
                 key={item.id}
                 item={item}
-                items={items}
-                itemIndex={items.indexOf(item)}
-                setItem={setItems}
+                cart={cart}
+                setCart={setCart}
               />
             ))}
           </div>
