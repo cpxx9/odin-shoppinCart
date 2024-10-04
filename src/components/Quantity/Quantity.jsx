@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import StyledQuantity from './StyledQuantity';
+
 const Quantity = ({ item, cart, setCart }) => {
   const index = cart.findIndex((cartItem) => cartItem.id === item.id);
 
@@ -33,14 +35,14 @@ const Quantity = ({ item, cart, setCart }) => {
   };
 
   return (
-    <div>
+    <StyledQuantity>
       <div>
         <button onClick={decreaseQuantity}>-</button>
         <p>{index > -1 ? cart[index].quantity : '0'}</p>
         <button onClick={increaseQuantity}>+</button>
       </div>
       <button onClick={clearCart}>Clear</button>
-    </div>
+    </StyledQuantity>
   );
 };
 
