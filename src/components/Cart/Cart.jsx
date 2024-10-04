@@ -4,23 +4,25 @@ import Quantity from '../Quantity/Quantity';
 const Cart = ({ cart = [], setCart = () => {} }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openCart = () => {
+  console.log(cart);
+
+  const toggleCart = () => {
     const open = !isOpen;
     setIsOpen(open);
   };
 
   return (
     <div>
-      <span onClick={openCart}>Cart</span>
+      <span onClick={toggleCart}>Cart</span>
       {isOpen ? (
         <ul>
-          {cart.map((cartItem) => {
+          {cart.map((cartItem) => (
             <li key={cartItem.id}>
               <p>{cartItem.title}</p>
               <p>{cartItem.price}</p>
               <Quantity item={cartItem} cart={cart} setCart={setCart} />
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
       ) : (
         ''
